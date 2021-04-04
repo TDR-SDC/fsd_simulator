@@ -16,8 +16,6 @@ find_package(catkin REQUIRED COMPONENTS
   # dynamic_reconfigure
 )
 
-find_package(orocos_kdl REQUIRED)
-
 ############################
 ## dynamic reconfiure api ##
 ############################
@@ -43,7 +41,7 @@ include_directories(${catkin_INCLUDE_DIRS})
 add_executable(pure_pursuit src/pure_pursuit.cpp)
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(pure_pursuit ${catkin_LIBRARIES} ${orocos_kdl_LIBRARIES})
+target_link_libraries(pure_pursuit ${catkin_LIBRARIES})
 
 ## Make sure configure headers are built before any node using them
 # add_dependencies(pure_pursuit ${PROJECT_NAME}_gencfg)
