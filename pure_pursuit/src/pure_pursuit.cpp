@@ -246,7 +246,7 @@ void PurePursuit::computeVelocities(nav_msgs::Odometry odom)
     tf_broadcaster_.sendTransform(lookahead_);
 
     // Publish the velocities
-    pub_vel_.publish(cmd_vel_);
+    // pub_vel_.publish(cmd_vel_);
 
     // Publish ackerman steering setpoints
     pub_acker_.publish(cmd_acker_);
