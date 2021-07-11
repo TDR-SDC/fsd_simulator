@@ -34,7 +34,8 @@ ROSPixelCloudFusionApp::TransformPoint(const pcl::PointXYZ &in_point, const tf::
   else pty-=0.175;
   tf::Vector3 tf_point(ptx, pty, in_point.z+0.25);
   tf::Vector3 tf_point_t = in_transform * tf_point;
-  return pcl::PointXYZ(tf_point_t.x(), tf_point_t.y(), tf_point_t.z());
+//   return pcl::PointXYZ(tf_point_t.x(), tf_point_t.y(), tf_point_t.z());
+  return tf_point_t;
 }
 
 void ROSPixelCloudFusionApp::ImageCallback(const sensor_msgs::Image::ConstPtr &in_image_msg)
