@@ -51,4 +51,5 @@ catkin_make
 roslaunch eufs_gazebo small_track.launch      # launch eufs simulator
 roslaunch gmapping gmapping.launch            # launch gmapping
 roslaunch pure_pursuit pure_pursuit.launch    # launch pure_pursuit controller
+roslaunch eufs_gazebo sensor_integration.launch # launch integrated pipeline
 ```
