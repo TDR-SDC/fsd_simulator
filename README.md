@@ -46,10 +46,12 @@ catkin_make
 1. Source the workspace:
 
 - ```source ~/catkin_ws/devel/setup.bash```
+
 2. Enter the three given commands in different terminals after using the sourcing the workspace
 ```bash
-roslaunch eufs_gazebo small_track.launch      # launch eufs simulator
-roslaunch gmapping gmapping.launch            # launch gmapping
-roslaunch pure_pursuit pure_pursuit.launch    # launch pure_pursuit controller
-roslaunch eufs_gazebo sensor_integration.launch # launch integrated pipeline
+roslaunch eufs_gazebo small_track.launch                 # launch eufs simulator
+roslaunch gmapping gmapping.launch                       # launch gmapping
+roslaunch pure_pursuit pure_pursuit.launch               # launch pure_pursuit controller
+roslaunch perception_pipeline perception_pipeline.launch # launch perception YOLOv4 tiny pipeline
+roslaunch eufs_gazebo sensor_integration.launch          # launch integrated pipeline
 ```
