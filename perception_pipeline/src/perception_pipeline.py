@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import cv2
+import sys
 import numpy as np
 from threading import Thread, enumerate
 from queue import Queue
@@ -8,14 +9,22 @@ import time
 import rospy
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
-
+import message_filters
+from std_msgs.msg import Int64MultiArray
+from sensor_msgs.msg import PointCloud2 as pc2
+from sensor_msgs.msg import LaserScan
+from laser_geometry import LaserProjection
 # import darknet functions to perform object detections
+sys.path.append("/home/mukul888/darknet")
 from darknet import *
 
+
 # load in our YOLOv4 architecture network
-network, class_names, class_colors = load_network("cfg/yolov4-tiny-custom.cfg", "data/obj.data", "yolov4-tiny-custom_best.weights")
+network, class_names, class_colors = load_network("/home/mukul888/darknet/cfg/yolov4-tiny-custom.cfg", "/home/mukul888/darknet/data/obj.data", "/home/mukul888/darknet/yolov4-tiny-custom_best.weights")
 width = network_width(network)
 height = network_height(network)
+
+img_pub = rospy.Publisher('img_corr', Image, queue_size=10)
 
 # darknet helper function to run detection on image
 def darknet_helper(img, width, height):
@@ -34,30 +43,37 @@ def darknet_helper(img, width, height):
   free_image(darknet_image)
   return detections, width_ratio, height_ratio
 
+point = []
 
-cap = cv2.VideoCapture('test.mp4')
+def callback(data):
+    bridge = CvBridge()
+    image = bridge.imgmsg_to_cv2(data, 'bgr8')
+    detections(image, data)
+ 
+    
 
-def image_callback(data):
-    image = CvBridge.imgmsg_to_cv2(data, 'bgr8')
-    detections(image)
 
-def Subscriber():
+def sub():
     rospy.init_node('image_listener', anonymous=True)
-    sub = rospy.Subscriber('/zed/left/image_raw' , Image, image_callback)
+    rospy.Subscriber('/zed/left/image_raw' , Image, callback)
     rospy.spin()
 
 
 
-def detections(img):
+def detections(img, data):
     detections, width_ratio, height_ratio = darknet_helper(img, width, height)
     detection_queue = [detections, width_ratio, height_ratio]
-    drawing(img, detection_queue)
+    drawing(img, detection_queue, data)
 
 
 
-def drawing(img, detection_queue):
-    detection_list = detection_queue.get()
+def drawing(img, detection_queue, data):
+    detection_list = detection_queue
     detections, width_ratio, height_ratio = detection_list
+    img_bbox = np.zeros(img.shape).astype(np.float32)
+    list_detect = []
+    img_bbox.fill(255)
+    delta = 10
 
     for label, confidence, bbox in detections:
 
@@ -66,13 +82,19 @@ def drawing(img, detection_queue):
             bottom * height_ratio)
 
         if label.lower()=='yellow':
-            cv2.rectangle(img, (left, top), (right, bottom), (30, 255, 255), 2)
+            cv2.rectangle(img, (left-delta, top-delta), (right+delta, bottom+delta), (0, 255, 0), -1)
         elif label.lower()=='blue':
-            cv2.rectangle(img, (left, top), (right, bottom), (255, 0, 0), 2)
-
+            cv2.rectangle(img, (left-delta, top-delta), (right+delta, bottom+delta), (255, 0, 0), -1)
+    bridge = CvBridge()
+    msg = Image()
+    msg=bridge.cv2_to_imgmsg(img, "bgr8")
+    msg.header = data.header
+    img_pub.publish(msg)
+    cv2.imshow('imgae', img)
+    cv2.waitKey(1)
 
 if __name__ == '__main__':
-    Subscriber()
+    sub()
     # detections_queue = Queue()
     # frame_queue = Queue(maxsize=1)
     # Thread(target=detections, args=(detections_queue, frame_queue)).start()
