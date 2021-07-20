@@ -6,7 +6,7 @@ A pure pursuit path following controller, implemented in ROS.
 
 - to see the controller in action run the following launch command 
 ```bash
-roslaunch eufs_gazebo sensor_integration.launch          # launch integrated pipeline
+roslaunch eufs_gazebo sensor_integration.launch         # launch integrated pipeline
 ```
 
 ## aditional functionality ##
