@@ -13,4 +13,11 @@ How to operate?
 5. From the files open your workspace in the src folder open the launch folder.
 6. In the sick_lms_1xx.launch file change the default IP address.
 7. Now in the terminal launch the file using the following command: 'roslaunch sick_scan sck_lms_1xx.launch'
-8. In a new ternimal give the command 'rviz' simultaneously
+8. In a new ternimal give the command 'rviz' simultaneously.
+9. In rviz change the fixed frame to 
+10. At the bottom of the rviz click on the 'Add' option.
+11. Add a new display: 'PointCloud2'
+12. Change the topic to '/cloud'.
+
+Output
+After following the above steps you will see dotted lines in the rviz. The dotted lines represent the the objects the  
