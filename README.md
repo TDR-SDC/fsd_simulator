@@ -12,6 +12,10 @@
 ## Installation
 ### Prerequisites
 - Ubuntu 20.04
+- cuda 11.0
+- cudnn 8.0.5
+- OpenCV4 from source
+- Darknet(https://github.com/AlexeyAB/darknet )
 - Install [ros-noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)
 - cmake minimum version 3.19.0
 - Packages:
