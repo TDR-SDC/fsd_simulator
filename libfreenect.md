@@ -1,5 +1,5 @@
 ## Installation Instructions
-Clone the repository in your home folder and follow the commands
+Clone the repository (https://github.com/OpenKinect/libfreenect.git) in your home folder and follow the commands
 
     ~$ cd libfreenect    
     ~$ mkdir build   
