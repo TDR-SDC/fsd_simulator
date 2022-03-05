@@ -1,18 +1,24 @@
 
 
 
-#### Introduction
+### Introduction
 Lidar technology uses near-infrared light to detect objects around a vehicle. We will see how sick scan lms 1xx will operate in ROS.
 
-#### Prerequisites
+
+ ![Screenshot from 2022-03-05 11-59-21](https://user-images.githubusercontent.com/99531399/156871449-1f6674ad-a2cc-407e-a4d4-8b780c620060.png)
+
+
+
+
+### Prerequisites
 1. Git clone the sick scan repository from the following link: 
       > https://github.com/SICKAG/sick_scan
 2. Now from the terminal give the following commands
-     > cd "workspace name" 
+     > cd < workspace name > 
  
      > catkin_make
   
-#### How to operate?
+### How to operate?
 1. Connect the lidar to the laptop/PC using the M12-RJ45 connecting cabel.
      
     
@@ -23,24 +29,26 @@ Lidar technology uses near-infrared light to detect objects around a vehicle. We
 3. In the **Identity** add a new name.
 
 
- ![Screenshot from 2022-03-05 00-27-57](https://user-images.githubusercontent.com/99531399/156825185-91945e52-33d7-4555-bcf7-41b75e269d21.png)
+![Screenshot from 2022-03-05 11-47-07](https://user-images.githubusercontent.com/99531399/156871078-4646a48a-a7b0-45c7-94fa-9ae98189b5ca.png)
+
 
 
 4. Select IPv4. Change the method to **Manual**. Fillup the address and netmask section.
 
 
-![Screenshot from 2022-03-05 00-31-51](https://user-images.githubusercontent.com/99531399/156825656-839d346f-f670-4fed-9274-a8ce8a9166b5.png)
+![Screenshot from 2022-03-05 11-48-06](https://user-images.githubusercontent.com/99531399/156871055-f84bb567-f4e3-4828-897b-9b375a6ef132.png)
+
 
 
 
 
 5. Click **Add**.
 6. From the files open your workspace, in the workspace go to the src folder and open the launch folder.
-7. The sick_lms_1xx.launch file has a arg tag, in the arg tag change the default IP address to the IP address of lidar. 
+7. The sick_lms_1xx.launch file has a arg tag, in the arg tag change the default IP address to the IP address of lidar i.e **169.254.195.208**. 
 8. Now in the terminal launch the file using the following command: 
      
-     >'roslaunch sick_scan sick_lms_1xx.launch'
-8. In a new ternimal give the foloowing command simultaneously
+     > roslaunch sick_scan sick_lms_1xx.launch
+8. In a new ternimal give the following command simultaneously.
       
       > rviz
 9. In rviz change the fixed frame to **laser**
@@ -48,6 +56,6 @@ Lidar technology uses near-infrared light to detect objects around a vehicle. We
 11. Add a new display: **PointCloud2**
 12. Change the topic of PointCloud2 to **/cloud**
 
-#### Output
-After following the above steps you will see a point cloud in the rviz. The point cloud is a collection of points representing the objects around the lidar.  
+### Output
+After following the above steps you will see a point cloud in the rviz. A point cloud is a collection of points representing the objects around the lidar.  
 
