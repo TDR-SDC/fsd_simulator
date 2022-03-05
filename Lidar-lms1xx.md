@@ -1,8 +1,8 @@
+# Sick lms 111
 
 
-
-### Introduction
-Lidar technology uses near-infrared light to detect objects around a vehicle. We will see how sick scan lms 1xx will operate in ROS.
+## Introduction
+Lidar technology uses near-infrared light to detect objects around a vehicle. We will see how sick scan lms 111 will operate in ROS.
 
 
  ![Screenshot from 2022-03-05 11-59-21](https://user-images.githubusercontent.com/99531399/156871449-1f6674ad-a2cc-407e-a4d4-8b780c620060.png)
@@ -36,13 +36,13 @@ Lidar technology uses near-infrared light to detect objects around a vehicle. We
 4. Select IPv4. Change the method to **Manual**. Fillup the address and netmask section.
 
 
-![Screenshot from 2022-03-05 11-48-06](https://user-images.githubusercontent.com/99531399/156871055-f84bb567-f4e3-4828-897b-9b375a6ef132.png)
+![Screenshot from 2022-03-05 12-31-57](https://user-images.githubusercontent.com/99531399/156872643-4d218510-1460-4672-ad0b-2ddc8f21904a.png)
 
 
 
 
 
-5. Click **Add**.
+5. Click **Apply**.
 6. From the files open your workspace, in the workspace go to the src folder and open the launch folder.
 7. The sick_lms_1xx.launch file has a arg tag, in the arg tag change the default IP address to the IP address of lidar i.e **169.254.195.208**. 
 8. Now in the terminal launch the file using the following command: 
