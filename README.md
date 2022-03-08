@@ -19,20 +19,28 @@
 - Install [ros-noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)
 - cmake minimum version 3.19.0
 - libfreenect (https://github.com/OpenKinect/libfreenect.git) see libfreenect.md
-- Packages:
-  - ros-noetic-ackermann-msgs
-  - ros-noetic-twist-mux
-  - ros-noetic-joy
-  - ros-noetic-controller-manager
-  - ros-noetic-robotnik-msgs
-  - ros-noetic-velodyne-simulator
-  - ros-noetic-effort-controllers
-  - ros-noetic-velocity-controllers
-  - ros-noetic-joint-state-controller
-  - ros-noetic-gazebo-ros-control
-  - ros-noetic-navigation
-  - ros-noetic-gmapping
-  - ros-noetic-rgbd-launch
+
+- Python Packages:
+  - pcl
+  - scipy 
+```bash
+sudo apt install python3-pcl
+sudo apt install python3-scipy
+```
+-  ROS Packages:
+    - ros-noetic-ackermann-msgs
+    - ros-noetic-twist-mux
+    - ros-noetic-joy
+    - ros-noetic-controller-manager
+    - ros-noetic-robotnik-msgs
+    - ros-noetic-velodyne-simulator
+    - ros-noetic-effort-controllers
+    - ros-noetic-velocity-controllers
+    - ros-noetic-joint-state-controller
+    - ros-noetic-gazebo-ros-control
+    - ros-noetic-navigation
+    - ros-noetic-gmapping
+    - ros-noetic-rgbd-launch
 
 Here's a direct terminal command to install all of them at once:
 ```bash
