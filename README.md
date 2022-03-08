@@ -12,8 +12,8 @@
 ## Installation
 ### Prerequisites
 - Ubuntu 20.04
-- cuda 11.0
-- cudnn 8.0.5
+- Cuda 11.0
+- CUDNN 8.0.5
 - OpenCV4 4.5.5 from source
 - Darknet (https://github.com/AlexeyAB/darknet)
 - Install [ros-noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)
@@ -32,10 +32,11 @@
   - ros-noetic-gazebo-ros-control
   - ros-noetic-navigation
   - ros-noetic-gmapping
+  - ros-noetic-rgbd-launch
 
 Here's a direct terminal command to install all of them at once:
 ```bash
-sudo apt install ros-noetic-ackermann-msgs ros-noetic-twist-mux ros-noetic-joy ros-noetic-controller-manager ros-noetic-velodyne-simulator ros-noetic-effort-controllers ros-noetic-velocity-controllers ros-noetic-joint-state-controller ros-noetic-gazebo-ros-control ros-noetic-navigation ros-noetic-gmapping
+sudo apt install ros-noetic-ackermann-msgs ros-noetic-twist-mux ros-noetic-joy ros-noetic-controller-manager ros-noetic-velodyne-simulator ros-noetic-effort-controllers ros-noetic-velocity-controllers ros-noetic-joint-state-controller ros-noetic-gazebo-ros-control ros-noetic-navigation ros-noetic-gmapping ros-noetic-rgbd-launch
 ```
 
 ### How to build
