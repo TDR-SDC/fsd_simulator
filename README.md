@@ -19,7 +19,8 @@
 - Install [ros-noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)
 - cmake minimum version 3.19.0
 - libfreenect (https://github.com/OpenKinect/libfreenect.git) see libfreenect.md
-- Python:
+
+- Python Packages:
   - pcl
   - scipy 
 ```bash
