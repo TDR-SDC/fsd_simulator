@@ -17,8 +17,8 @@
 - OpenCV4 4.5.5 from source
 - Darknet (https://github.com/AlexeyAB/darknet)
 - Install [ros-noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)
-- CMake minimum version 3.19.0
-- Libfreenect (https://github.com/OpenKinect/libfreenect.git) see libfreenect.md
+- cmake minimum version 3.19.0
+- libfreenect (https://github.com/OpenKinect/libfreenect.git) see libfreenect.md
 - Packages:
   - ros-noetic-ackermann-msgs
   - ros-noetic-twist-mux
