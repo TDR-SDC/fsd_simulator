@@ -43,6 +43,7 @@ sudo apt install python3-scipy
     - ros-noetic-navigation
     - ros-noetic-gmapping
     - ros-noetic-rgbd-launch
+    - ros-noetic-nmea-navsat-driver
 
 Here's a direct terminal command to install all of them at once:
 ```bash
