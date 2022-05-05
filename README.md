@@ -17,7 +17,7 @@
 - OpenCV4 4.5.5 from source
 - Darknet (https://github.com/AlexeyAB/darknet)
 - Install [ros-noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)
-- cmake minimum version 3.19.0
+- cmake minimum version 3.19.0 (https://answers.ros.org/question/293119/how-can-i-updateremove-cmake-without-partially-deleting-my-ros-distribution/)
 - libfreenect (https://github.com/OpenKinect/libfreenect.git) see libfreenect.md (In addition to the instructions given in the repository, see the command below)
 ```bash
 sudo apt-get install freenect
