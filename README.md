@@ -12,25 +12,41 @@
 ## Installation
 ### Prerequisites
 - Ubuntu 20.04
+- Cuda 11.0
+- CUDNN 8.0.5
+- OpenCV4 4.5.5 from source
+- Darknet (https://github.com/AlexeyAB/darknet)
 - Install [ros-noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)
-- cmake minimum version 3.19.0
-- Packages:
-  - ros-noetic-ackermann-msgs
-  - ros-noetic-twist-mux
-  - ros-noetic-joy
-  - ros-noetic-controller-manager
-  - ros-noetic-robotnik-msgs
-  - ros-noetic-velodyne-simulator
-  - ros-noetic-effort-controllers
-  - ros-noetic-velocity-controllers
-  - ros-noetic-joint-state-controller
-  - ros-noetic-gazebo-ros-control
-  - ros-noetic-navigation
-  - ros-noetic-gmapping
+- cmake minimum version 3.19.0 (https://answers.ros.org/question/293119/how-can-i-updateremove-cmake-without-partially-deleting-my-ros-distribution/)
+- libfreenect (https://github.com/OpenKinect/libfreenect.git) see libfreenect.md (In addition to the instructions given in the repository, see the command below)
+```bash
+sudo apt-get install freenect
+```
+- Python Packages:
+  - pcl
+  - scipy 
+```bash
+sudo apt install python3-pcl
+sudo apt install python3-scipy
+```
+-  ROS Packages:
+    - ros-noetic-ackermann-msgs
+    - ros-noetic-twist-mux
+    - ros-noetic-joy
+    - ros-noetic-controller-manager
+    - ros-noetic-robotnik-msgs
+    - ros-noetic-velodyne-simulator
+    - ros-noetic-effort-controllers
+    - ros-noetic-velocity-controllers
+    - ros-noetic-joint-state-controller
+    - ros-noetic-gazebo-ros-control
+    - ros-noetic-navigation
+    - ros-noetic-gmapping
+    - ros-noetic-rgbd-launch
 
 Here's a direct terminal command to install all of them at once:
 ```bash
-sudo apt install ros-noetic-ackermann-msgs ros-noetic-twist-mux ros-noetic-joy ros-noetic-controller-manager ros-noetic-velodyne-simulator ros-noetic-effort-controllers ros-noetic-velocity-controllers ros-noetic-joint-state-controller ros-noetic-gazebo-ros-control ros-noetic-navigation ros-noetic-gmapping
+sudo apt install ros-noetic-ackermann-msgs ros-noetic-twist-mux ros-noetic-joy ros-noetic-controller-manager ros-noetic-velodyne-simulator ros-noetic-effort-controllers ros-noetic-velocity-controllers ros-noetic-joint-state-controller ros-noetic-gazebo-ros-control ros-noetic-navigation ros-noetic-gmapping ros-noetic-rgbd-launch
 ```
 
 ### How to build
