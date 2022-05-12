@@ -71,3 +71,11 @@ roslaunch pure_pursuit pure_pursuit.launch               # launch pure_pursuit c
 roslaunch perception_pipeline perception_pipeline.launch # launch perception YOLOv4 tiny pipeline
 roslaunch eufs_gazebo sensor_integration.launch          # launch integrated pipeline
 ```
+3. To Launch Complete Pipeline in Simulator:
+```bash
+roslaunch eufs_gazebo sensor_integration.launch                 # launch Complete Pipeline
+``` 
+4. To Launch Complete Pipeline Physically:
+```bash
+roslaunch eufs_gazebo complete_pipeline.launch                 # launch Complete Pipeline
+``` 
