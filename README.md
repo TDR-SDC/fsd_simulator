@@ -43,10 +43,11 @@ sudo apt install python3-scipy
     - ros-noetic-navigation
     - ros-noetic-gmapping
     - ros-noetic-rgbd-launch
+    - ros-noetic-nmea-navsat-driver
 
 Here's a direct terminal command to install all of them at once:
 ```bash
-sudo apt install ros-noetic-ackermann-msgs ros-noetic-twist-mux ros-noetic-joy ros-noetic-controller-manager ros-noetic-velodyne-simulator ros-noetic-effort-controllers ros-noetic-velocity-controllers ros-noetic-joint-state-controller ros-noetic-gazebo-ros-control ros-noetic-navigation ros-noetic-gmapping ros-noetic-rgbd-launch
+sudo apt install ros-noetic-ackermann-msgs ros-noetic-twist-mux ros-noetic-joy ros-noetic-controller-manager ros-noetic-velodyne-simulator ros-noetic-effort-controllers ros-noetic-velocity-controllers ros-noetic-joint-state-controller ros-noetic-gazebo-ros-control ros-noetic-navigation ros-noetic-gmapping ros-noetic-rgbd-launch ros-noetic-nmea-navsat-driver
 ```
 
 ### How to build
