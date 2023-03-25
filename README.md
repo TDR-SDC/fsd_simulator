@@ -28,7 +28,31 @@ export PATH=/usr/local/cuda-11.0/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64\
                          ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 ```
-- CUDNN 8.0.5
+- CUDNN 8.0.5 
+ 
+  Install the cudnn 8.0.5 from the official website 
+    
+![cudnn](https://user-images.githubusercontent.com/99531399/227703445-35a36155-f8a0-47b4-a4fc-5b7f0d956728.png)
+
+After installation, open the terminal and extract the file using the following commands:
+```bash
+cd Downloads
+tar -zxf <copy the file name>.tgz
+
+```
+A folder named cuda will be built, transfer it to home, the execute the following commands:
+
+```bash
+  cd cuda/
+  sudo cp lib64/* /usr/local/cuda/lib64/
+  sudo cp include/* /usr/local/cuda/include/
+  sudo reboot 
+```
+After reboot to check if the cudnn has been installled correctly, give th following command:
+```bash 
+dpkg -l libcudnn8
+```
+
 - OpenCV4 4.5.5 from source
 - Darknet (https://github.com/AlexeyAB/darknet)
 - Install [ros-noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)
