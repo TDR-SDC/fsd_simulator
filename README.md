@@ -11,7 +11,9 @@
 
 ## Installation
 ### Prerequisites
+
 - Ubuntu 20.04
+- Install [ros-noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)
 - Cuda 11.0
 ```bash
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
@@ -52,11 +54,61 @@ After reboot to check if the cudnn has been installled correctly, give th follow
 ```bash 
 dpkg -l libcudnn8
 ```
+- cmake minimum version 3.19.0 (https://answers.ros.org/question/293119/how-can-i-updateremove-cmake-without-partially-deleting-my-ros-distribution/)
+
+   ![cmake](https://user-images.githubusercontent.com/99531399/227709016-9fabed4f-eb7e-4745-8a11-b1a81d990f75.png)
+   
+  To check the cmake version give the following command:
+  ```bash
+  cmake --version
+  ```
 
 - OpenCV4 4.5.5 from source
+
+```bash
+mkdir ~/opencv_build && cd ~/opencv_build
+git clone https://github.com/opencv/opencv.git
+git clone https://github.com/opencv/opencv_contrib.git
+cd opencv
+git checkout 4.5.5
+cd ..
+cd opencv_contrib
+git checkout 4.5.5
+```
+Once the download is complete, create a temporary build directory, and switch to it:
+```bash
+cd ~/opencv_build/opencv
+mkdir build && cd build
+```
+Set up the OpenCV build with CMake:
+
+```bash
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D INSTALL_C_EXAMPLES=ON \
+    -D INSTALL_PYTHON_EXAMPLES=ON \
+    -D OPENCV_GENERATE_PKGCONFIG=ON \
+    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_build/opencv_contrib/modules \
+    -D BUILD_EXAMPLES=ON \ 
+    -D WITH_CUDA=ON ..
+```
+
+![opencv](https://user-images.githubusercontent.com/99531399/227763042-1aa08ddf-08f9-4ad2-91ab-62c8117cf0d9.png)
+
+![opencv2](https://user-images.githubusercontent.com/99531399/227763116-3187e144-822c-4b9a-802c-e7b60934eb3e.png)
+
+Install OpenCV with:
+```bash 
+sudo make install
+```
+To verify whether OpenCV has been installed successfully, type the following command and you should see the OpenCV version:
+
+```bash
+pkg-config --modversion opencv4
+```
+
 - Darknet (https://github.com/AlexeyAB/darknet)
-- Install [ros-noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)
-- cmake minimum version 3.19.0 (https://answers.ros.org/question/293119/how-can-i-updateremove-cmake-without-partially-deleting-my-ros-distribution/)
+
 - libfreenect (https://github.com/OpenKinect/libfreenect.git) see libfreenect.md (In addition to the instructions given in the repository, see the command below)
 ```bash
 sudo apt-get install freenect
