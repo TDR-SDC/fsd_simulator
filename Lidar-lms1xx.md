@@ -50,7 +50,10 @@ Lidar technology uses near-infrared light to detect objects around a vehicle. We
 6. Click **Apply**.
 7. From the files open your workspace, in the workspace go to the src folder and open the launch folder.
 8. The sick_lms_1xx.launch file has a arg tag, in the arg tag change the default IP address to the IP address of lidar i.e **169.254.195.208**. 
-9. Now in the terminal launch the file using the following command: 
+9. Edit: 
+   <param name="min_ang" type="double" value="-1.658" />
+   <param name="max_ang" type="double" value="1.658" />
+10. Now in the terminal launch the file using the following command: 
 
      > cd < workspace name >
  
