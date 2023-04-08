@@ -55,7 +55,7 @@ After reboot to check if the cudnn has been installled correctly, give th follow
 dpkg -l libcudnn8
 ```
 my way:
-(sudo dpkg -i <path-to-cudnn-deb-file>)
+(sudo dpkg -i path-to-cudnn-deb-file)
 
 
 - cmake minimum version 3.19.0 (https://answers.ros.org/question/293119/how-can-i-updateremove-cmake-without-partially-deleting-my-ros-distribution/)
